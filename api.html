@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API & Developer Portal | UNP TOURS</title>
+    <meta name="description" content="API na Developer Portal - UNP TOURS. Unganisha mifumo yako na huduma zetu za kitalii kwa urahisi na usalama mkubwa.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://unp.tours/api.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="API & Developer Portal | UNP TOURS">
+    <meta property="og:description" content="Unganisha mifumo yako na huduma za UNP TOURS.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Ruka hadi maudhui</a>
+
+    <header class="header">
+        <nav class="nav-container" aria-label="Menyu kuu">
+            <a href="index.html" class="logo-area" aria-label="UNP Tours - Nyumbani">
+                <div class="logo-holder">
+                    <!-- Badilisha na <img src="logo.png" alt="UNP Tours Logo"> -->
+                    <span class="logo-fallback" aria-hidden="true">UNP<br>LOGO</span>
+                </div>
+                <div class="logo-text">
+                    <h2>UNP TOURS</h2>
+                    <span>Unique &amp; Natural Paradise</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menuToggleBtn"
+                    aria-label="Fungua menyu"
+                    aria-expanded="false"
+                    aria-controls="navLinks">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Nyumbani</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> Kuhusu Sisi</a></li>
+                <li><a href="services.html"><i class="fas fa-briefcase" aria-hidden="true"></i> Huduma</a></li>
+                <li><a href="api.html" class="active" aria-current="page"><i class="fas fa-code" aria-hidden="true"></i> API Portal</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Wasiliana</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <section class="api-header">
+            <h1><i class="fas fa-code" aria-hidden="true"></i> Developer API Portal</h1>
+            <p>Mfumo rasmi wa ushirikiano wa kiteknolojia — unganisha mifumo yako na huduma za UNP TOURS kwa usalama.</p>
+        </section>
+
+        <section class="api-content">
+            <h2>Kuhusu API Yetu</h2>
+            <p>UNP TOURS inatoa huduma salama za RESTful API kwa taasisi, washirika, na watengenezaji programu (developers) wanaotaka kuunganisha mifumo yao moja kwa moja kwa ajili ya upatikanaji wa taarifa za safari, uhifadhi, na huduma za kitamaduni.</p>
+
+            <h2>Vitu Unavyoweza Kufanya Kwenye Mfumo</h2>
+            <ul>
+                <li>Kuchukua orodha na taarifa za kina za safari zote zilizopo.</li>
+                <li>Kuchukua taarifa za trip moja maalum kupitia kitambulisho chake (<code>trip_id</code>).</li>
+                <li>Kutafuta na kuchuja trips kwa kategoria au eneo husika.</li>
+                <li>Kusajili na kuweka booking mpya moja kwa moja kupitia mfumo wako.</li>
+                <li>Kukagua hali ya bookings za wateja na mapitio (reviews).</li>
+            </ul>
+
+            <h2>Taratibu za Kuanza (Getting Started)</h2>
+            <div class="info-box">
+                <h4>1. Sajili Akaunti ya Partner/Developer</h4>
+                <p>Wasiliana nasi kupitia barua pepe au WhatsApp ili kusajiliwa kama mshirika rasmi wa kiteknolojia.</p>
+            </div>
+            <div class="info-box">
+                <h4>2. Pokea API Key Yako Maalum</h4>
+                <p>Baada ya uhakiki, utapewa ufunguo wa siri wa API (<em>Bearer Token</em>) utakaouweka kwenye vichwa vya maombi yako (<em>Headers</em>).</p>
+            </div>
+            <div class="info-box">
+                <h4>3. Anza Kufanya Muunganisho</h4>
+                <p>Tumia nyaraka zetu hapa chini kujaribu maombi kwenye mifumo yako ya majaribio (Sandbox).</p>
+            </div>
+
+            <h2>Mifano ya Maombi (API Endpoints)</h2>
+            <p class="note-warning"><strong>Kumbuka:</strong> Hizi ni mifano ya jinsi API itakavyofanya kazi. Endpoints za kweli zitafunguliwa hivi karibuni.</p>
+
+            <p><strong>1. Kuchukua Trips Zote:</strong></p>
+            <pre class="code-box"><code>GET https://api.unp.tours/v1/trips
+Headers: { "Authorization": "Bearer YOUR_API_KEY" }</code></pre>
+
+            <p><strong>2. Kuchukua Trip Moja kwa ID:</strong></p>
+            <pre class="code-box"><code>GET https://api.unp.tours/v1/trips/{trip_id}
+Headers: { "Authorization": "Bearer YOUR_API_KEY" }</code></pre>
+
+            <p><strong>3. Kutafuta Trips kwa Kategoria:</strong></p>
+            <pre class="code-box"><code>GET https://api.unp.tours/v1/trips/search?category=Zanzibar&amp;limit=10
+Headers: { "Authorization": "Bearer YOUR_API_KEY" }</code></pre>
+
+            <p><strong>4. Kuweka Booking Mpya:</strong></p>
+            <pre class="code-box"><code>POST https://api.unp.tours/v1/bookings
+Headers: {
+  "Authorization": "Bearer YOUR_API_KEY",
+  "Content-Type": "application/json"
+}
+Body: {
+  "trip_id": "trip_123",
+  "name": "John Doe",
+  "email": "john@example.com",
+  "date": "2026-12-15",
+  "guests": 2
+}</code></pre>
+
+            <h2>Viwango vya Matumizi (Rate Limits)</h2>
+            <ul>
+                <li><strong>Free Tier:</strong> 100 requests / siku (Kwa ajili ya majaribio pekee)</li>
+                <li><strong>Basic Partner:</strong> 1,000 requests / siku</li>
+                <li><strong>Pro Partner:</strong> 10,000 requests / siku</li>
+                <li><strong>Enterprise:</strong> Huduma maalum isiyo na kikomo</li>
+            </ul>
+
+            <h2>Msaada wa Kiufundi (Technical Support)</h2>
+            <div class="info-box info-box-blue">
+                <h4>Unahitaji Msaada Zaidi wa Kiufundi?</h4>
+                <p>Timu yetu ya TEHAMA ipo tayari kukusaidia kukamilisha muunganisho wako. Wasiliana nasi kupitia barua pepe: <strong>salimnasoro11@gmail.com</strong> au namba ya WhatsApp.</p>
+                <a href="https://wa.me/255655728982?text=Hello%20UNP%20TOURS%20IT%20Team!%20Ninahitaji%20msaada%20kuhusu%20API."
+                   class="btn-portal"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Wasiliana na IT Support
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+                <p class="footer-about">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar &amp; Tanzania.</p>
+            </div>
+            <div>
+                <h4>Wasiliana Nasi</h4>
+                <p class="footer-contact"><i class="fab fa-whatsapp" aria-hidden="true"></i> +255 655 728 982</p>
+                <p class="footer-contact"><i class="fas fa-envelope" aria-hidden="true"></i> salimnasoro11@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://wa.me/255655728982" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="mailto:salimnasoro11@gmail.com" aria-label="Barua pepe"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    <a href="https://www.tiktok.com/@unptours" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/255655728982?text=Habari%20UNP%20Tours"
+       class="floating-whatsapp"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <script>
+        const menuToggleBtn = document.getElementById('menuToggleBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuToggleBtn && navLinks) {
+            menuToggleBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('active');
+                menuToggleBtn.setAttribute('aria-expanded', isOpen);
+                menuToggleBtn.setAttribute('aria-label', isOpen ? 'Funga menyu' : 'Fungua menyu');
+            });
+        }
+    </script>
+
+</body>
+</html>
